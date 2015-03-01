@@ -18,7 +18,6 @@
 
 //Source : http://www.javacreed.com/running-a-batch-file-with-processbuilder/
 
-
 package ca.uqac.info.Job.Launcher;
 
 import java.io.File;

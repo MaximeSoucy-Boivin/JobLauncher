@@ -98,38 +98,43 @@ public class JobLauncher
 		    System.exit(ERR_ARGUMENTS);
 		 }
 		 
-		 //Contains the username
-		 if(c_line.hasOption("username"))
+		 //Use the email option
+		 if(emailOpt == true)
 		 {
-			 username = c_line.getOptionValue("u");
-		 }
-		 else
-		 {
-		    System.err.println("No username in Arguments");
-		    System.exit(ERR_ARGUMENTS);
+			//Contains the username
+			if(c_line.hasOption("username"))
+			{
+				username = c_line.getOptionValue("u");
+			}
+			else
+			{
+				System.err.println("No username in Arguments");
+				System.exit(ERR_ARGUMENTS);
+			}
+		 
+			//Contains the password
+			if(c_line.hasOption("password"))
+			{
+				password = c_line.getOptionValue("p");
+			}
+			else
+			{
+				System.err.println("No password in Arguments");
+				System.exit(ERR_ARGUMENTS);
+			}
+		 
+			//Contains the recipient Email
+			if(c_line.hasOption("recipientEmail"))
+			{
+				recipient = c_line.getOptionValue("r");
+			}
+			else
+			{
+				System.err.println("No recipient Email in Arguments");
+				System.exit(ERR_ARGUMENTS);
+			}
 		 }
 		 
-		 //Contains the password
-		 if(c_line.hasOption("password"))
-		 {
-			 password = c_line.getOptionValue("p");
-		 }
-		 else
-		 {
-		    System.err.println("No password in Arguments");
-		    System.exit(ERR_ARGUMENTS);
-		 }
-		 
-		//Contains the recipient Email
-		 if(c_line.hasOption("recipientEmail"))
-		 {
-			 recipient = c_line.getOptionValue("r");
-		 }
-		 else
-		 {
-		    System.err.println("No recipient Email in Arguments");
-		    System.exit(ERR_ARGUMENTS);
-		 }
 		 
 		 folderBat = new File(batFolder);
 		 listOfFiles = folderBat.listFiles();
